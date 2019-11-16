@@ -48,7 +48,6 @@ const expenseIsRecurring = (expenseArray) => {
     return true
 }
 
-
 const getRecurringExpenses = (expenses) => {
     const recurringVendorNames = []
     const expensesByVendorName = _.groupBy(expenses, 'name')
@@ -60,4 +59,6 @@ const getRecurringExpenses = (expenses) => {
     return recurringVendorNames
 }
 
-console.log(getRecurringExpenses(mock))
+exports.mockData = mock
+exports.expenseIsRecurring = expenseIsRecurring
+exports.getRecurringExpenses = getRecurringExpenses
