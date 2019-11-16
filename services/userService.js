@@ -1,5 +1,5 @@
 const { mockData, getCategory, getRecurringExpenses } = require('../utils')
-const { getTransactionsMonth } = require('./transactionsService')
+const { getTransactionsMonth, getTransactionsByName } = require('./transactionsService')
 const recurringExpenses = {}
 
 const addRecurringExpense = (expense) => {
@@ -40,6 +40,7 @@ const addRating = (expenseName, rating, date) => {
 const initialize = () => {
     getTransactionsMonth(3)
         .then(expenses => getRecurringExpenses(expenses))
+        .then(expenses => getTransactionsByName([...new Set(expenses.map(expense => expense.name))]))
         .then(expenses => expenses.forEach(expense => addRecurringExpense(expense)))
         .then(() => console.log(JSON.stringify(recurringExpenses, null, 4)))
 }
