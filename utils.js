@@ -43,15 +43,15 @@ const expenseIsRecurring = (expenseArray) => {
     if (expenseArray.length <= 1) {
         return false
     }
-
     // only consider expenses one month apart for now
     // for demo purposes accept 27-32 day difference as a month
-    const MIN_DAYS = 27*24*60*60
-    const MAX_DAYS = 32*24*60*60
+    const MIN_DAYS = 27*24*60*60*1000
+    const MAX_DAYS = 32*24*60*60*1000
     
+
     const a = [...expenseArray].sort((A,B) => B.date-A.date)
     for (let i=0; i < a.length-1; i++) {
-        if (a[i+1].date < a[i].date-MAX_DAYS || a[i+1].date > a[i].date-MIN_DAYS) {
+        if (a[i+1].date.getTime() < a[i].date.getTime()-MAX_DAYS || a[i+1].date.getTime() > a[i].date.getTime()-MIN_DAYS) {
             // out of date range
             return false
         }
@@ -60,14 +60,14 @@ const expenseIsRecurring = (expenseArray) => {
 }
 
 const getRecurringExpenses = (expenses) => {
-    const recurringVendorNames = []
+    const recurringExpenses = []
     const expensesByVendorName = _.groupBy(expenses, 'name')
     for (let expenseVendorName of Object.keys(expensesByVendorName)) {
         if (expenseIsRecurring(expensesByVendorName[expenseVendorName])) {
-            recurringVendorNames.push(expenseVendorName)
+            recurringExpenses.push(...expensesByVendorName[expenseVendorName])
         }
     }
-    return recurringVendorNames
+    return recurringExpenses
 }
 
 const getCategory = (expenseName) => {

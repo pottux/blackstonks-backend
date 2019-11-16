@@ -1,5 +1,5 @@
-const { mockData, getCategory } = require('../utils')
-
+const { mockData, getCategory, getRecurringExpenses } = require('../utils')
+const { getTransactionsMonth } = require('./transactionsService')
 const recurringExpenses = {}
 
 const addRecurringExpense = (expense) => {
@@ -12,7 +12,7 @@ const addRecurringExpense = (expense) => {
         }
     }
     recurringExpenses[expense.name]['expenses'].push(expense)
-    recurringExpenses[expense.name]['amount'] = expense.amount
+    recurringExpenses[expense.name]['amount'] = expense.amount / 100
 }
 
 const addRating = (expenseName, rating, date) => {
@@ -24,13 +24,15 @@ const addRating = (expenseName, rating, date) => {
         date
     })
 }
-mockData.filter(expense => expense.name === "asd")
-    .forEach(expense => addRecurringExpense(expense))
 
-// console.log(recurringExpenses['asd'])
+const initialize = () => {
+    getTransactionsMonth(3)
+        .then(expenses => getRecurringExpenses(expenses))
+        .then(expenses => expenses.forEach(expense => addRecurringExpense(expense)))
+        .then(() => console.log(JSON.stringify(recurringExpenses, null, 4)))
+}
 
-addRating('asd', 4, 1573923306)
-addRating('asd', 2, 1573776000)
-
-console.log(JSON.stringify(recurringExpenses,null,4))
-
+exports.initialize = initialize
+exports.recurringExpenses = recurringExpenses
+exports.addRecurringExpense = addRecurringExpense
+exports.addRating = addRating
