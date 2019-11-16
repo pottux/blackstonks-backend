@@ -1,6 +1,6 @@
 const expenseRouter = require('express').Router()
-const { recurringExpenses } = require('../services/userService')
+const { getRecurringExpensesArray } = require('../services/userService')
 
-expenseRouter.get('/', async (req, res) => res.status(200).json(recurringExpenses))
+expenseRouter.get('/', async (req, res) => res.status(200).json(getRecurringExpensesArray()))
 
 module.exports = expenseRouter

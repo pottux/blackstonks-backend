@@ -15,13 +15,14 @@ if (process.env.NODE_ENV !== 'production') {
 const connection = require('./connection')
 connection.connect()
 
-const transactionsRouter = require('./routes/transactions')
 const expensesRouter = require('./routes/expenses')
+const ratingsRouter = require('./routes/ratings')
 
 app.use(cors())
 app.use(bodyParser.json())
 
 app.use('/api/expenses', expensesRouter)
+app.use('/api/ratings', ratingsRouter)
 
 const PORT = process.env.PORT || 8000
 app.listen(PORT, () => {
