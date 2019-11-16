@@ -23,6 +23,7 @@ const addRating = (expenseName, rating, date) => {
         rating,
         date
     })
+    console.log(JSON.stringify(recurringExpenses,null, 4))
 }
 
 const initialize = () => {
