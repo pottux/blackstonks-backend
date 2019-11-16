@@ -13,7 +13,7 @@ const addRecurringExpense = (expense) => {
         }
     }
     recurringExpenses[expense.name]['expenses'].push(expense)
-    recurringExpenses[expense.name]['amount'] = expense.amount / 100
+    recurringExpenses[expense.name]['amount'] = expense.amount
 }
 
 const getRecurringExpensesArray = () => {
@@ -43,7 +43,8 @@ const initialize = () => {
         .then(expenses => getRecurringExpenses(expenses))
         .then(expenses => getTransactionsByName([...new Set(expenses.map(expense => expense.name))]))
         .then(expenses => expenses.forEach(expense => addRecurringExpense({
-            ...expense,
+            name: expense.name,
+            amount: expense.amount / 100,
             date: expense.date.getTime()
         })))
         .then(() => {
