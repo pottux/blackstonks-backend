@@ -1,14 +1,16 @@
-const { mockData, getCategory, getRecurringExpenses } = require('../utils')
+const { getRecurringExpenses } = require('../utils')
 const { getTransactionsMonth, getTransactionsByName } = require('./transactionsService')
+const { getAllCategories } = require('./categoriesService')
 const recurringExpenses = {}
 
-const addRecurringExpense = (expense) => {
+const addRecurringExpense = async (expense, categories) => {
     if (!(expense.name in recurringExpenses)) {
+        const category = categories.filter(e => e.service.includes(expense.name.toLowerCase())).pop()
         recurringExpenses[expense.name] = {
             expenses: [],
             ratings: [],
             amount: null,
-            category: getCategory(expense.name)
+            category: category ? category.name : 'other'
         }
     }
     recurringExpenses[expense.name]['expenses'].push(expense)
@@ -34,15 +36,15 @@ const addRating = (expenseName, rating, date) => {
         rating,
         date
     })
-    console.log(JSON.stringify(recurringExpenses,null, 4))
 }
 
 const initialize = () => {
-    getTransactionsMonth(3)
-        .then(expenses => getRecurringExpenses(expenses))
-        .then(expenses => getTransactionsByName([...new Set(expenses.map(expense => expense.name))]))
-        .then(expenses => expenses.forEach(expense => addRecurringExpense(expense)))
-        .then(() => console.log(JSON.stringify(recurringExpenses, null, 4)))
+    getAllCategories().then(categories => {
+        getTransactionsMonth(3)
+            .then(expenses => getRecurringExpenses(expenses))
+            .then(expenses => getTransactionsByName([...new Set(expenses.map(expense => expense.name))]))
+            .then(expenses => expenses.forEach(expense => addRecurringExpense(expense, categories)))
+    })
 }
 
 exports.initialize = initialize
