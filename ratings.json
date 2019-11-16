@@ -1,0 +1,401 @@
+{
+    "Spotify": [
+        {
+            "date": 1556830800000,
+            "name": "Spotify",
+            "rating": 4
+        },
+        {
+            "date": 1551564000000,
+            "name": "Spotify",
+            "rating": 3
+        },
+        {
+            "date": 1554238800000,
+            "name": "Spotify",
+            "rating": 4
+        },
+        {
+            "date": 1546466400000,
+            "name": "Spotify",
+            "rating": 4
+        },
+        {
+            "date": 1570050000000,
+            "name": "Spotify",
+            "rating": 3
+        },
+        {
+            "date": 1559509200000,
+            "name": "Spotify",
+            "rating": 4
+        },
+        {
+            "date": 1567458000000,
+            "name": "Spotify",
+            "rating": 2
+        },
+        {
+            "date": 1564779600000,
+            "name": "Spotify",
+            "rating": 4
+        },
+        {
+            "date": 1562101200000,
+            "name": "Spotify",
+            "rating": 4
+        },
+        {
+            "date": 1572732000000,
+            "name": "Spotify",
+            "rating": 3
+        },
+        {
+            "date": 1549144800000,
+            "name": "Spotify",
+            "rating": 4
+        }
+    ],
+    "Netflix": [
+        {
+            "date": 1567458000000,
+            "name": "Netflix",
+            "rating": 4
+        },
+        {
+            "date": 1551564000000,
+            "name": "Netflix",
+            "rating": 4
+        },
+        {
+            "date": 1570050000000,
+            "name": "Netflix",
+            "rating": 3
+        },
+        {
+            "date": 1564779600000,
+            "name": "Netflix",
+            "rating": 3
+        },
+        {
+            "date": 1549144800000,
+            "name": "Netflix",
+            "rating": 2
+        },
+        {
+            "date": 1554238800000,
+            "name": "Netflix",
+            "rating": 4
+        },
+        {
+            "date": 1546466400000,
+            "name": "Netflix",
+            "rating": 3
+        },
+        {
+            "date": 1562101200000,
+            "name": "Netflix",
+            "rating": 4
+        },
+        {
+            "date": 1559509200000,
+            "name": "Netflix",
+            "rating": 2
+        },
+        {
+            "date": 1572732000000,
+            "name": "Netflix",
+            "rating": 3
+        },
+        {
+            "date": 1556830800000,
+            "name": "Netflix",
+            "rating": 3
+        }
+    ],
+    "HBO": [
+        {
+            "date": 1546466400000,
+            "name": "HBO",
+            "rating": 1
+        },
+        {
+            "date": 1572732000000,
+            "name": "HBO",
+            "rating": 2
+        },
+        {
+            "date": 1559509200000,
+            "name": "HBO",
+            "rating": 2
+        },
+        {
+            "date": 1564779600000,
+            "name": "HBO",
+            "rating": 3
+        },
+        {
+            "date": 1551564000000,
+            "name": "HBO",
+            "rating": 2
+        },
+        {
+            "date": 1554238800000,
+            "name": "HBO",
+            "rating": 2
+        },
+        {
+            "date": 1562101200000,
+            "name": "HBO",
+            "rating": 1
+        },
+        {
+            "date": 1567458000000,
+            "name": "HBO",
+            "rating": 1
+        },
+        {
+            "date": 1549144800000,
+            "name": "HBO",
+            "rating": 1
+        },
+        {
+            "date": 1556830800000,
+            "name": "HBO",
+            "rating": 2
+        },
+        {
+            "date": 1570050000000,
+            "name": "HBO",
+            "rating": 1
+        }
+    ],
+    "Blizzard Entertainment": [
+        {
+            "date": 1572732000000,
+            "name": "Blizzard Entertainment",
+            "rating": 3
+        },
+        {
+            "date": 1570050000000,
+            "name": "Blizzard Entertainment",
+            "rating": 2
+        },
+        {
+            "date": 1564779600000,
+            "name": "Blizzard Entertainment",
+            "rating": 2
+        },
+        {
+            "date": 1567458000000,
+            "name": "Blizzard Entertainment",
+            "rating": 3
+        },
+        {
+            "date": 1562101200000,
+            "name": "Blizzard Entertainment",
+            "rating": 2
+        },
+        {
+            "date": 1559509200000,
+            "name": "Blizzard Entertainment",
+            "rating": 3
+        },
+        {
+            "date": 1556830800000,
+            "name": "Blizzard Entertainment",
+            "rating": 1
+        },
+        {
+            "date": 1554238800000,
+            "name": "Blizzard Entertainment",
+            "rating": 2
+        },
+        {
+            "date": 1551564000000,
+            "name": "Blizzard Entertainment",
+            "rating": 1
+        },
+        {
+            "date": 1549144800000,
+            "name": "Blizzard Entertainment",
+            "rating": 1
+        },
+        {
+            "date": 1546466400000,
+            "name": "Blizzard Entertainment",
+            "rating": 2
+        }
+    ],
+    "Audible": [
+        {
+            "date": 1546466400000,
+            "name": "Audible",
+            "rating": 4
+        },
+        {
+            "date": 1572732000000,
+            "name": "Audible",
+            "rating": 4
+        },
+        {
+            "date": 1562101200000,
+            "name": "Audible",
+            "rating": 3
+        },
+        {
+            "date": 1549144800000,
+            "name": "Audible",
+            "rating": 4
+        },
+        {
+            "date": 1570050000000,
+            "name": "Audible",
+            "rating": 3
+        },
+        {
+            "date": 1559509200000,
+            "name": "Audible",
+            "rating": 4
+        },
+        {
+            "date": 1567458000000,
+            "name": "Audible",
+            "rating": 3
+        },
+        {
+            "date": 1556830800000,
+            "name": "Audible",
+            "rating": 4
+        },
+        {
+            "date": 1564779600000,
+            "name": "Audible",
+            "rating": 3
+        },
+        {
+            "date": 1551564000000,
+            "name": "Audible",
+            "rating": 4
+        },
+        {
+            "date": 1554238800000,
+            "name": "Audible",
+            "rating": 4
+        }
+    ],
+    "Adobe Creative Cloud": [
+        {
+            "date": 1570050000000,
+            "name": "Adobe Creative Cloud",
+            "rating": 4
+        },
+        {
+            "date": 1556830800000,
+            "name": "Adobe Creative Cloud",
+            "rating": 3
+        },
+        {
+            "date": 1562101200000,
+            "name": "Adobe Creative Cloud",
+            "rating": 4
+        },
+        {
+            "date": 1554238800000,
+            "name": "Adobe Creative Cloud",
+            "rating": 4
+        },
+        {
+            "date": 1549144800000,
+            "name": "Adobe Creative Cloud",
+            "rating": 2
+        },
+        {
+            "date": 1564779600000,
+            "name": "Adobe Creative Cloud",
+            "rating": 2
+        },
+        {
+            "date": 1567458000000,
+            "name": "Adobe Creative Cloud",
+            "rating": 2
+        },
+        {
+            "date": 1551564000000,
+            "name": "Adobe Creative Cloud",
+            "rating": 1
+        },
+        {
+            "date": 1546466400000,
+            "name": "Adobe Creative Cloud",
+            "rating": 1
+        },
+        {
+            "date": 1572732000000,
+            "name": "Adobe Creative Cloud",
+            "rating": 4
+        },
+        {
+            "date": 1559509200000,
+            "name": "Adobe Creative Cloud",
+            "rating": 4
+        }
+    ],
+    "iCloud": [
+        {
+            "date": 1551564000000,
+            "name": "iCloud",
+            "rating": 2
+        },
+        {
+            "date": 1564779600000,
+            "name": "iCloud",
+            "rating": 2
+        },
+        {
+            "date": 1572732000000,
+            "name": "iCloud",
+            "rating": 1
+        },
+        {
+            "date": 1562101200000,
+            "name": "iCloud",
+            "rating": 2
+        },
+        {
+            "date": 1549144800000,
+            "name": "iCloud",
+            "rating": 2
+        },
+        {
+            "date": 1559509200000,
+            "name": "iCloud",
+            "rating": 1
+        },
+        {
+            "date": 1556830800000,
+            "name": "iCloud",
+            "rating": 2
+        },
+        {
+            "date": 1546466400000,
+            "name": "iCloud",
+            "rating": 2
+        },
+        {
+            "date": 1570050000000,
+            "name": "iCloud",
+            "rating": 1
+        },
+        {
+            "date": 1554238800000,
+            "name": "iCloud",
+            "rating": 2
+        },
+        {
+            "date": 1567458000000,
+            "name": "iCloud",
+            "rating": 2
+        }
+    ]
+}
