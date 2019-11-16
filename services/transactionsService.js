@@ -27,7 +27,7 @@ module.exports.getTransactionsByName = async (name) => {
 
 module.exports.getAll = async () => {
   try {
-    const transactions = await Transaction.find({})
+    const transactions = await Transaction.find({}).sort([['date', -1]])
     return transactions.map(Transaction.format)
   } catch (error) {
     return error
