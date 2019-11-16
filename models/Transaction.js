@@ -6,7 +6,6 @@ const transactionSchema = new mongoose.Schema({
     amount: Number,
 })
 
-
 transactionSchema.statics.format = (transaction) => {
     return {
         date: transaction.date,
@@ -15,6 +14,6 @@ transactionSchema.statics.format = (transaction) => {
     }
 }
 
-const Transaction = mongoose.model('Transaction', transactionSchema)
+const Transaction = mongoose.model('transactions', transactionSchema)
 
 module.exports = Transaction;

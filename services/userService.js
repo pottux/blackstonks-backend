@@ -1,15 +1,17 @@
-const { mockData, getCategory, getRecurringExpenses } = require('../utils')
+const { getRecurringExpenses } = require('../utils')
 const { getTransactionsMonth, getTransactionsByName } = require('./transactionsService')
+const { getAllCategories } = require('./categoriesService')
 const mockRatings = require('../ratings.json')
 const recurringExpenses = {}
 
-const addRecurringExpense = (expense) => {
+const addRecurringExpense = async (expense, categories) => {
     if (!(expense.name in recurringExpenses)) {
+        const category = categories.filter(e => e.service.includes(expense.name.toLowerCase())).pop()
         recurringExpenses[expense.name] = {
             expenses: [],
             ratings: [],
             amount: null,
-            category: getCategory(expense.name)
+            category: category ? category.name : 'other'
         }
     }
     recurringExpenses[expense.name]['expenses'].push(expense)
@@ -36,27 +38,27 @@ const addRating = (expenseName, rating, date) => {
         rating,
         date
     })
-    console.log(JSON.stringify(recurringExpenses, null, 4))
 }
 
 const initialize = () => {
-    getTransactionsMonth(3)
-        .then(expenses => getRecurringExpenses(expenses))
-        .then(expenses => getTransactionsByName([...new Set(expenses.map(expense => expense.name))]))
-        .then(expenses => expenses.forEach(expense => addRecurringExpense({
-            name: expense.name,
-            amount: expense.amount / 100,
-            date: expense.date.getTime()
-        })))
-        .then(() => {
-            for (let key of Object.keys(mockRatings)) {
-                for (let rating of mockRatings[key]) {
-                    addRating(rating.name, rating.rating, rating.date)
+    getAllCategories().then(categories => {
+        getTransactionsMonth(3)
+            .then(expenses => getRecurringExpenses(expenses))
+            .then(expenses => getTransactionsByName([...new Set(expenses.map(expense => expense.name))]))
+            .then(expenses => expenses.forEach(expense => addRecurringExpense({
+                name: expense.name,
+                amount: expense.amount / 100,
+                date: expense.date.getTime()
+            }, categories)))
+            .then(() => {
+                for (let key of Object.keys(mockRatings)) {
+                    for (let rating of mockRatings[key]) {
+                        addRating(rating.name, rating.rating, rating.date)
+                    }
                 }
-            }
 
-        })
-        .then(() => console.log(JSON.stringify({ recurringExpenses }, null, 4)))
+            })
+    })
 }
 
 exports.initialize = initialize
