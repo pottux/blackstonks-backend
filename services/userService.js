@@ -15,6 +15,17 @@ const addRecurringExpense = (expense) => {
     recurringExpenses[expense.name]['amount'] = expense.amount / 100
 }
 
+const getRecurringExpensesArray = () => {
+    const agg = []
+    for (let key of Object.keys(recurringExpenses)) {
+        agg.push({
+            name: key,
+            ...recurringExpenses[key]
+        })
+    }
+    return agg
+}
+
 const addRating = (expenseName, rating, date) => {
     if (!expenseName in recurringExpenses) {
         return
@@ -34,6 +45,6 @@ const initialize = () => {
 }
 
 exports.initialize = initialize
-exports.recurringExpenses = recurringExpenses
+exports.getRecurringExpensesArray = getRecurringExpensesArray
 exports.addRecurringExpense = addRecurringExpense
 exports.addRating = addRating
