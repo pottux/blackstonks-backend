@@ -16,11 +16,12 @@ const connection = require('./connection')
 connection.connect()
 
 const transactionsRouter = require('./routes/transactions')
+const expensesRouter = require('./routes/expenses')
 
 app.use(cors())
 app.use(bodyParser.json())
 
-app.use('/api/transactions', transactionsRouter)
+app.use('/api/expenses', expensesRouter)
 
 const PORT = process.env.PORT || 8000
 app.listen(PORT, () => {
