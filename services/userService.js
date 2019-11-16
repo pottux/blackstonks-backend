@@ -21,6 +21,7 @@ const getRecurringExpensesArray = () => {
     for (let key of Object.keys(recurringExpenses)) {
         agg.push({
             name: key,
+            ratingMean:recurringExpenses[key]['ratings'].map(x => x.rating).reduce((a,c) => a+c,0)/recurringExpenses[key]['ratings'].length,
             ...recurringExpenses[key]
         })
     }
