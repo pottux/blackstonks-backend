@@ -1,10 +1,8 @@
 const express = require('express')
 
-const Example = require('../models/example')
-
 const router = express.Router()
 
-router.get('/', (request, response) => {
+router.get('/', (req, res) => {
     res.send('Example')
 })
 
