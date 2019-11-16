@@ -1,6 +1,7 @@
 const { getRecurringExpenses } = require('../utils')
 const { getTransactionsMonth, getTransactionsByName } = require('./transactionsService')
 const { getAllCategories } = require('./categoriesService')
+const mockRatings = require('../ratings.json')
 const recurringExpenses = {}
 
 const addRecurringExpense = async (expense, categories) => {
@@ -14,7 +15,7 @@ const addRecurringExpense = async (expense, categories) => {
         }
     }
     recurringExpenses[expense.name]['expenses'].push(expense)
-    recurringExpenses[expense.name]['amount'] = expense.amount / 100
+    recurringExpenses[expense.name]['amount'] = expense.amount
 }
 
 const getRecurringExpensesArray = () => {
@@ -43,7 +44,19 @@ const initialize = () => {
         getTransactionsMonth(3)
             .then(expenses => getRecurringExpenses(expenses))
             .then(expenses => getTransactionsByName([...new Set(expenses.map(expense => expense.name))]))
-            .then(expenses => expenses.forEach(expense => addRecurringExpense(expense, categories)))
+            .then(expenses => expenses.forEach(expense => addRecurringExpense({
+                name: expense.name,
+                amount: expense.amount / 100,
+                date: expense.date.getTime()
+            }, categories)))
+            .then(() => {
+                for (let key of Object.keys(mockRatings)) {
+                    for (let rating of mockRatings[key]) {
+                        addRating(rating.name, rating.rating, rating.date)
+                    }
+                }
+
+            })
     })
 }
 
