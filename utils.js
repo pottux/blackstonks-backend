@@ -1,5 +1,16 @@
 var _ = require('lodash');
 
+const mockCategories = {
+    jee: [
+        'asd',
+        'moi'
+    ],
+    streaming: [
+        'netflix',
+        'HBO'
+    ]
+}
+
 const mock = [
     {
         name: 'netflix',
@@ -59,6 +70,16 @@ const getRecurringExpenses = (expenses) => {
     return recurringVendorNames
 }
 
+const getCategory = (expenseName) => {
+    for (let category of Object.keys(mockCategories)) {
+        if (mockCategories[category].includes(expenseName)) {
+            return category
+        }
+        return 'other'
+    }
+}
+
 exports.mockData = mock
 exports.expenseIsRecurring = expenseIsRecurring
 exports.getRecurringExpenses = getRecurringExpenses
+exports.getCategory = getCategory
