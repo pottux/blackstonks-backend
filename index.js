@@ -14,12 +14,12 @@ if (process.env.NODE_ENV !== 'production') {
 const connection = require('./connection')
 connection.connect()
 
-const example = require('./routes/example')
+const transactionsRouter = require('./routes/transactions')
 
 app.use(cors())
 app.use(bodyParser.json())
 
-app.use('/example', example)
+app.use('/api/transactions', transactionsRouter)
 
 const PORT = process.env.PORT || 8000
 app.listen(PORT, () => {
