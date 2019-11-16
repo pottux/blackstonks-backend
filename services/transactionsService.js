@@ -16,9 +16,9 @@ module.exports.getTransactionsMonth = async (months) => {
   }
 }
 
-module.exports.getTransactionsByName = async (name) => {
+module.exports.getTransactionsByName = async (query) => {
   try {
-    const transactions = await Transaction.find({ name: { $regex: name, $options: 'i' } })
+    const transactions = await Transaction.find({ name: { $regex: query.join('|'), $options: 'i' } })
     return transactions.map(Transaction.format)
   } catch (error) {
     return error
