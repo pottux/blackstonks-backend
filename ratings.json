@@ -397,5 +397,118 @@
             "name": "iCloud",
             "rating": 2
         }
+    ],
+    "Youtube Premium": [
+        {
+            "date": 1570050000000,
+            "name": "Youtube Premium",
+            "rating": 4
+        },
+        {
+            "date": 1556830800000,
+            "name": "Youtube Premium",
+            "rating": 3
+        },
+        {
+            "date": 1562101200000,
+            "name": "Youtube Premium",
+            "rating": 3
+        },
+        {
+            "date": 1554238800000,
+            "name": "Youtube Premium",
+            "rating": 3
+        },
+        {
+            "date": 1549144800000,
+            "name": "Youtube Premium",
+            "rating": 3
+        },
+        {
+            "date": 1564779600000,
+            "name": "Youtube Premium",
+            "rating": 4
+        },
+        {
+            "date": 1567458000000,
+            "name": "Youtube Premium",
+            "rating": 4
+        },
+        {
+            "date": 1551564000000,
+            "name": "Youtube Premium",
+            "rating": 3
+        },
+        {
+            "date": 1546466400000,
+            "name": "Youtube Premium",
+            "rating": 3
+        },
+        {
+            "date": 1572732000000,
+            "name": "Youtube Premium",
+            "rating": 3
+        },
+        {
+            "date": 1559509200000,
+            "name": "Youtube Premium",
+            "rating": 4
+        }
+    ],"Apple Music": [
+        {
+            "date": 1570050000000,
+            "name": "Apple Music",
+            "rating": 4
+        },
+        {
+            "date": 1556830800000,
+            "name": "Apple Music",
+            "rating": 3
+        },
+        {
+            "date": 1562101200000,
+            "name": "Apple Music",
+            "rating": 3
+        },
+        {
+            "date": 1554238800000,
+            "name": "Apple Music",
+            "rating": 4
+        },
+        {
+            "date": 1549144800000,
+            "name": "Apple Music",
+            "rating": 3
+        },
+        {
+            "date": 1564779600000,
+            "name": "Apple Music",
+            "rating": 4
+        },
+        {
+            "date": 1567458000000,
+            "name": "Apple Music",
+            "rating": 3
+        },
+        {
+            "date": 1551564000000,
+            "name": "Apple Music",
+            "rating": 3
+        },
+        {
+            "date": 1546466400000,
+            "name": "Apple Music",
+            "rating": 3
+        },
+        {
+            "date": 1572732000000,
+            "name": "Apple Music",
+            "rating": 4
+        },
+        {
+            "date": 1559509200000,
+            "name": "Apple Music",
+            "rating": 4
+        }
     ]
 }
