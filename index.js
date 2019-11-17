@@ -29,6 +29,11 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
 
+app.get('/init', async (req, res) => {
+  await initialize()
+  res.sendStatus(200)
+})
+
 initialize()
 
 app.use((req, res, next, err) => {
