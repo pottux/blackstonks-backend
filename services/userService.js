@@ -40,12 +40,11 @@ const getRecurringExpensesArray = () => {
         const morePoints = sameCategory
             .filter(x => x.ratingMean > jee.ratingMean)
         
-        const colorByPoints = jee.ratingMean > 3.5 ? 4 :
-        jee.ratingMean > 2.5 ? 3 :
-        jee.ratingMean > 1.5 ? 2 :
+        const colorByPoints = jee.ratingMean > 3 ? 3 :
+        jee.ratingMean > 2 ? 2 :
         1
 
-        const colorBySameCategory = Math.max(4 - morePoints.length, 0)
+        const colorBySameCategory = Math.max(4 - Math.max(1, morePoints.length), 1)
 
         agg[i] = {
             ...jee,
