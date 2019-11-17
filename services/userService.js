@@ -23,6 +23,10 @@ const getRecurringExpensesArray = () => {
     for (let key of Object.keys(recurringExpenses)) {
         agg.push({
             name: key,
+            part: recurringExpenses[key].amount / Object.values(recurringExpenses)
+                .filter(x => x.category ===recurringExpenses[key].category)
+                .map(x => x.amount)
+                .reduce((a,b) => a+b,0),
             ratingMean:recurringExpenses[key]['ratings'].map(x => x.rating).reduce((a,c) => a+c,0)/recurringExpenses[key]['ratings'].length,
             ...recurringExpenses[key]
         })
@@ -58,6 +62,7 @@ const initialize = () => {
                 }
 
             })
+            .then(() => console.log(JSON.stringify(recurringExpenses,null,4)))
     })
 }
 
