@@ -397,5 +397,39 @@
             "name": "iCloud",
             "rating": 2
         }
+    ],
+    "Youtube Premium": [
+        {
+            "date": 1551564000000,
+            "name": "Youtube Premium",
+            "rating": 4
+        },
+        {
+            "date": 1564779600000,
+            "name": "Youtube Premium",
+            "rating": 4
+        },
+        {
+            "date": 1572732000000,
+            "name": "Youtube Premium",
+            "rating": 3
+        }
+    ],
+    "Apple Music": [
+        {
+            "date": 1551564000000,
+            "name": "Apple Music",
+            "rating": 2
+        },
+        {
+            "date": 1564779600000,
+            "name": "Apple Music",
+            "rating": 3
+        },
+        {
+            "date": 1572732000000,
+            "name": "Apple Music",
+            "rating": 3
+        }
     ]
 }
