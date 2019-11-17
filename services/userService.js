@@ -31,6 +31,29 @@ const getRecurringExpensesArray = () => {
             ...recurringExpenses[key]
         })
     }
+
+    for (let i = 0; i < agg.length; i++) {
+        const jee = agg[i]
+        const sameCategory = agg
+            .filter(x => x.category === jee.category)
+            .filter(x => x.name !== jee.name)
+        const morePoints = sameCategory
+            .filter(x => x.ratingMean > jee.ratingMean)
+        
+        const colorByPoints = jee.ratingMean > 3.5 ? 4 :
+        jee.ratingMean > 2.5 ? 3 :
+        jee.ratingMean > 1.5 ? 2 :
+        1
+
+        const colorBySameCategory = Math.max(4 - morePoints.length, 0)
+
+        agg[i] = {
+            ...jee,
+            color: Math.min(colorByPoints, colorBySameCategory),
+            colorByCategory: colorBySameCategory < colorByPoints,
+        }
+    }
+
     return agg
 }
 
